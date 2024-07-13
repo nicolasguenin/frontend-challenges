@@ -1,0 +1,17 @@
+@use "../variables/colors";
+@use "../variables/typos";
+@use "../utils/func";
+
+html {
+  font-size: calc(0.625 * 1em);
+}
+
+body {
+  font-size: 1.6em;
+  color: var(--neutral);
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+}
