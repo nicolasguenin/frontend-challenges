@@ -1,6 +1,5 @@
 import '../assets/scss/variables/index.scss';
 import '../assets/scss/core/index.scss';
-import '../assets/scss/atoms/index.scss';
 import '../assets/scss/commons/index.scss';
 import type { Metadata } from 'next';
 import { Open_Sans } from 'next/font/google';
