@@ -1,0 +1,16 @@
+.overflow {
+  @each $overflow in ('hidden', 'auto', 'scroll') {
+
+    &-#{$overflow} {
+      overflow: #{$overflow};
+    }
+
+    &-x-#{$overflow} {
+      overflow-x: #{$overflow};
+    }
+
+    &-y-#{$overflow} {
+      overflow-y: #{$overflow};
+    }
+  }
+}
