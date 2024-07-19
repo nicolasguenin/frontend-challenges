@@ -6,6 +6,7 @@ import {
   createContext,
   useContext,
   useState,
+  useCallback,
 } from 'react';
 
 type ISidebar = {
@@ -23,8 +24,15 @@ export const useSidebar = (): ISidebar => useContext(SidebarContext);
 export const SidebarProvider: FC<{ children: ReactNode }> = ({ children }) => {
   const [displayed, setDisplayed] = useState<boolean>(false);
 
+  const setDisplayedState = useCallback(
+    (value: boolean) => setDisplayed(value),
+    []
+  );
+
   return (
-    <SidebarContext.Provider value={{ displayed, setDisplayed }}>
+    <SidebarContext.Provider
+      value={{ displayed, setDisplayed: setDisplayedState }}
+    >
       {children}
     </SidebarContext.Provider>
   );
