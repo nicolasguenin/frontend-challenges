@@ -69,7 +69,7 @@ const Button = <Element extends React.ElementType = typeof defaultElement>(
     { 'rounded-md': rounded },
     getBackgroundColor(color, outline, text),
     `text-${getColor(color, outline)}`,
-    'relative inline-block py-1 px-1-25 text-sm text-600 text-uppercase lh-default bordered',
+    'relative inline-block py-0-75 px-1 text-sm text-600 text-uppercase lh-default bordered',
     outline ? `border-${color} ${styles.outline}` : 'border-transparent',
     `text-decoration-${text ? 'underline' : 'none'}`,
     styles.button,
