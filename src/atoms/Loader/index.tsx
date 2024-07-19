@@ -1,12 +1,9 @@
 import clsx from 'clsx';
-import React from 'react';
+import { type ComponentPropsWithoutRef } from 'react';
 import styles from '~/atoms/Loader/index.module.scss';
 import Symbol from '~/atoms/Symbol';
 
-const Loader = ({
-  className,
-  ...rest
-}: React.ComponentPropsWithoutRef<'svg'>) => {
+const Loader = ({ className, ...rest }: ComponentPropsWithoutRef<'svg'>) => {
   const loaderClassName = clsx(
     'block mx-auto my-0 fill-none stroke-neutral-400 stroke-1',
     styles.loader

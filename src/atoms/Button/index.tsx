@@ -66,10 +66,10 @@ const Button = <Element extends React.ElementType = typeof defaultElement>(
   const rootClassName = clsx([
     block ? 'block' : 'inline-block',
     { 'w-full': block },
-    rounded,
+    { 'rounded-md': rounded },
     getBackgroundColor(color, outline, text),
     `text-${getColor(color, outline)}`,
-    'relative inline-block py-1 px-1-25 text-sm text-600 text-uppercase lh-default rounded-md bordered',
+    'relative inline-block py-1 px-1-25 text-sm text-600 text-uppercase lh-default bordered',
     outline ? `border-${color} ${styles.outline}` : 'border-transparent',
     `text-decoration-${text ? 'underline' : 'none'}`,
     styles.button,

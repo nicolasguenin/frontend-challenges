@@ -1,8 +1,13 @@
 import '../assets/scss/variables/index.scss';
 import '../assets/scss/core/index.scss';
+import '../assets/scss/navigation/index.scss';
 import '../assets/scss/commons/index.scss';
+import '../assets/scss/transitions/index.scss';
+
 import type { Metadata } from 'next';
 import { Open_Sans } from 'next/font/google';
+import Sidebar from '~/components/navigation/contents/Sidebar';
+import { SidebarProvider } from '~/components/navigation/context/SidebarProvider';
 
 const fontFamily = Open_Sans({ subsets: ['latin'] });
 
@@ -18,7 +23,12 @@ export default function RootLayout({
 }>) {
   return (
     <html lang='en'>
-      <body className={fontFamily.className}>{children}</body>
+      <body className={fontFamily.className}>
+        <SidebarProvider>
+          <Sidebar />
+        </SidebarProvider>
+        <div className='pl-5'>{children}</div>
+      </body>
     </html>
   );
 }

@@ -6,7 +6,12 @@ export default function Home() {
     <main>
       <Avatar src='/images/avatars/girl1.webp' />
       <div className='flex gap-1 flex-justify-center my-2'>
-        <Button as={Link} href='http://example.com' icon='heart'>
+        <Button
+          as={Link}
+          rounded={false}
+          href='http://example.com'
+          icon='hamburger-remove'
+        >
           Link
         </Button>
         <Button as={Link} href='http://example.com' icon='arrow-down'>
