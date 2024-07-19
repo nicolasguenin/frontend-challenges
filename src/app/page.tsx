@@ -1,113 +1,30 @@
-import Link from 'next/link';
-import { Avatar, Button } from '~/atoms';
-
 export default function Home() {
   return (
-    <main>
-      <Avatar src='/images/avatars/girl1.webp' />
-      <div className='flex gap-1 flex-justify-center my-2'>
-        <Button
-          as={Link}
-          rounded={false}
-          href='http://example.com'
-          icon='hamburger-remove'
+    <main className='mx-2 my-2'>
+      <h1>Welcome to my 100 frontend challenges application.</h1>
+
+      <p>
+        This project is inspired from{' '}
+        <a
+          href='https://dev.to/bigsondev/100-free-frontend-challenges-3f0'
+          target='_blank'
+          title='Open a new tab'
         >
-          Link
-        </Button>
-        <Button as={Link} href='http://example.com' icon='arrow-down'>
-          Link
-        </Button>
-        <Button disabled>Disabled</Button>
-      </div>
-      <Button block icon='arrow-up' loading>
-        Block
-      </Button>
-      <div className='flex gap-1 flex-justify-center my-2'>
-        <Button>Neutral</Button>
-        <Button color='primary'>Primary</Button>
-        <Button color='danger'>Danger</Button>
-        <Button color='info'>Info</Button>
-        <Button color='success'>Success</Button>
-        <Button color='warning'>Warning</Button>
-      </div>
+          this article
+        </a>
+        .
+      </p>
 
-      <div className='flex gap-1 flex-justify-center my-2'>
-        <Button icon='arrow-up'>Neutral</Button>
-        <Button color='primary' icon='arrow-up'>
-          Primary
-        </Button>
-        <Button color='danger' icon='arrow-up'>
-          Danger
-        </Button>
-        <Button color='info' icon='arrow-up'>
-          Info
-        </Button>
-        <Button color='success' icon='arrow-up'>
-          Success
-        </Button>
-        <Button color='warning' icon='arrow-up'>
-          Warning
-        </Button>
-      </div>
+      <p>
+        The code is available on github:{' '}
+        <a href='https://github.com/nicolasguenin/frontend-challenges'>here</a>.
+      </p>
 
-      <div className='flex gap-1 flex-justify-center my-2'>
-        <Button outline>Neutral</Button>
-        <Button outline color='primary'>
-          Primary
-        </Button>
-        <Button outline color='danger'>
-          Danger
-        </Button>
-        <Button outline color='info'>
-          Info
-        </Button>
-        <Button outline color='success'>
-          Success
-        </Button>
-        <Button outline color='warning'>
-          Warning
-        </Button>
-      </div>
+      <p>
+        Click on the burger to discover each challenge, and have a good time.
+      </p>
 
-      <div className='flex gap-1 flex-justify-center my-2'>
-        <Button loading>Download</Button>
-        <Button loading color='primary'>
-          Download
-        </Button>
-        <Button loading color='danger'>
-          Download
-        </Button>
-        <Button loading color='info'>
-          Download
-        </Button>
-        <Button loading color='success'>
-          Download
-        </Button>
-        <Button loading color='warning'>
-          Download
-        </Button>
-      </div>
-
-      <div className='flex gap-1 flex-justify-center my-2'>
-        <Button loading outline>
-          Download
-        </Button>
-        <Button loading outline color='primary'>
-          Download
-        </Button>
-        <Button loading outline color='danger'>
-          Download
-        </Button>
-        <Button loading outline color='info'>
-          Download
-        </Button>
-        <Button loading outline color='success'>
-          Download
-        </Button>
-        <Button loading outline color='warning'>
-          Download
-        </Button>
-      </div>
+      <p>See you.</p>
     </main>
   );
 }

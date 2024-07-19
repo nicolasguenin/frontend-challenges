@@ -13,6 +13,7 @@ type ComponentProps = {
   loading?: boolean;
   outline?: boolean;
   rounded?: boolean;
+  roundedFull?: boolean;
   text?: boolean;
 };
 
@@ -39,6 +40,7 @@ const Button = <Element extends React.ElementType = typeof defaultElement>(
     loading = false,
     outline = false,
     rounded = true,
+    roundedFull = false,
     text = false,
     ...rest
   } = props;
@@ -67,6 +69,7 @@ const Button = <Element extends React.ElementType = typeof defaultElement>(
     block ? 'block' : 'inline-block',
     { 'w-full': block },
     { 'rounded-md': rounded },
+    { [styles.buttonRounded]: roundedFull },
     getBackgroundColor(color, outline, text),
     `text-${getColor(color, outline)}`,
     'relative inline-block py-0-75 px-1 text-sm text-600 text-uppercase lh-default bordered',
