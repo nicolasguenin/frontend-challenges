@@ -1,13 +1,19 @@
 import React from 'react';
+import clsx from 'clsx';
 
 interface SymbolProps extends React.ComponentPropsWithoutRef<'svg'> {
   name: string;
+  size?: 16 | 20 | 24 | 28 | 32 | 38 | 42 | 48;
 }
 
-const Symbol = ({ className, name, ...rest }: SymbolProps) => {
+const Symbol = ({ className, name, size = 16, ...rest }: SymbolProps) => {
   const href = `/images/symbol-defs.svg#${name}`;
   return (
-    <svg viewBox='0 0 24 24' className={className} {...rest}>
+    <svg
+      viewBox='0 0 24 24'
+      className={clsx('icon', `icon-${size}`, className)}
+      {...rest}
+    >
       <use href={href}></use>
     </svg>
   );

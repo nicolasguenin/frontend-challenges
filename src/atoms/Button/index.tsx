@@ -11,6 +11,8 @@ type ComponentProps = {
   disabled?: boolean;
   icon?: string;
   loading?: boolean;
+  lowercase?: boolean;
+  minWidth?: boolean;
   outline?: boolean;
   rounded?: boolean;
   roundedFull?: boolean;
@@ -36,8 +38,11 @@ const Button = <Element extends React.ElementType = typeof defaultElement>(
     children,
     className,
     color = 'neutral',
+    disabled,
     icon = '',
     loading = false,
+    lowercase = false,
+    minWidth = false,
     outline = false,
     rounded = true,
     roundedFull = false,
@@ -72,18 +77,26 @@ const Button = <Element extends React.ElementType = typeof defaultElement>(
     { [styles.buttonRounded]: roundedFull },
     getBackgroundColor(color, outline, text),
     `text-${getColor(color, outline)}`,
-    'relative inline-block py-0-75 px-1 text-sm text-600 text-uppercase lh-default bordered',
+    'relative inline-block py-0-75 px-1 text-sm text-600 lh-default bordered',
+    { 'text-uppercase': !lowercase },
     outline ? `border-${color} ${styles.outline}` : 'border-transparent',
     `text-decoration-${text ? 'underline' : 'none'}`,
     styles.button,
     styles[`button-${color}`],
     { [styles.buttonLoading]: loading },
+    { [styles.buttonMinWidth]: minWidth },
     className,
   ]);
 
   return (
-    <Component className={rootClassName} {...rest}>
-      {!!icon && <Symbol name={icon} className='mr-0-75' />}
+    <Component
+      className={rootClassName}
+      disabled={disabled || loading}
+      {...rest}
+    >
+      {!!icon && (
+        <Symbol name={icon} className={clsx({ 'mr-0-75': children })} />
+      )}
       {children}
       {loading && (
         <Loader

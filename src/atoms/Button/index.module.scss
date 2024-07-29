@@ -26,10 +26,10 @@
 
   & > svg {
       display: inline-block;
-    width: 1em;
-    height: 1em;
-    fill: currentColor;
-    vertical-align: bottom;
+      width: 1em;
+      height: 1em;
+      fill: currentColor;
+      vertical-align: bottom;
   }
 }
 
@@ -81,4 +81,8 @@
 
 .buttonRounded {
   border-radius: 2.5rem;
+}
+
+.buttonMinWidth {
+  min-width: 12rem;
 }
