@@ -23,5 +23,6 @@ export type IIcon =
   | 'instagram'
   | 'linkedin'
   | 'more'
+  | 'shopping'
   | 'spinner'
   | 'x';
