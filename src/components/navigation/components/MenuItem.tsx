@@ -1,8 +1,9 @@
 import type { PropsWithChildren } from 'react';
 import Link, { type LinkProps } from 'next/link';
 import { Symbol } from '~/atoms';
+import type { IIcon } from '~/interfaces/Icon.interface';
 
-type MenuItemProps = PropsWithChildren & { icon?: string } & LinkProps;
+type MenuItemProps = PropsWithChildren & { icon?: IIcon } & LinkProps;
 
 const MenuItem = ({ children, icon, ...rest }: MenuItemProps) => {
   return (

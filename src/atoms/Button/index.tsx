@@ -1,15 +1,15 @@
 import React from 'react';
-
 import clsx from 'clsx';
 import { Loader, Symbol } from '~/atoms';
 import styles from './index.module.scss';
 import type { IColorElement } from '~/interfaces';
+import type { IIcon } from '~/interfaces/Icon.interface';
 
 type ComponentProps = {
   block?: boolean;
   color?: IColorElement | 'transparent';
   disabled?: boolean;
-  icon?: string;
+  icon?: IIcon;
   loading?: boolean;
   lowercase?: boolean;
   minWidth?: boolean;

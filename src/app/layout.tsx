@@ -12,6 +12,7 @@ import { Open_Sans } from 'next/font/google';
 import Sidebar from '~/components/navigation/contents/Sidebar';
 import { SidebarProvider } from '~/components/navigation/context/SidebarProvider';
 import ReactQueryProvider from '~/components/queries/ReactQueryProvider';
+import { ToastProvider } from '~/atoms/Toast/context/ToastProvider';
 
 const fontFamily = Open_Sans({ subsets: ['latin'] });
 
@@ -28,12 +29,14 @@ export default function RootLayout({
   return (
     <html lang='en'>
       <body className={fontFamily.className}>
-        <SidebarProvider>
-          <Sidebar />
-        </SidebarProvider>
-        <ReactQueryProvider>
-          <div className='pl-5'>{children}</div>
-        </ReactQueryProvider>
+        <ToastProvider>
+          <SidebarProvider>
+            <Sidebar />
+          </SidebarProvider>
+          <ReactQueryProvider>
+            <div className='pl-5'>{children}</div>
+          </ReactQueryProvider>
+        </ToastProvider>
       </body>
     </html>
   );

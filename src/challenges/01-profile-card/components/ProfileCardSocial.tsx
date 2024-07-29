@@ -1,9 +1,10 @@
-import { useGetUser } from '~/challenges/01-profile-card/hooks/useGetUser';
-import { Button, Symbol } from '~/atoms';
-import Link from 'next/link';
 import { ComponentPropsWithoutRef } from 'react';
 import clsx from 'clsx';
+import Link from 'next/link';
+import { useGetUser } from '~/challenges/01-profile-card/hooks/useGetUser';
+import { Symbol } from '~/atoms';
 import Skeleton from '~/atoms/Skeleton';
+import { IIcon } from '~/interfaces/Icon.interface';
 
 const ProfileCardSocial = ({ className }: ComponentPropsWithoutRef<'div'>) => {
   const { data, isLoading } = useGetUser();
@@ -26,7 +27,7 @@ const ProfileCardSocial = ({ className }: ComponentPropsWithoutRef<'div'>) => {
       {data.social.map((element) => {
         return (
           <Link key={element.name} href={element.url}>
-            <Symbol name={element.name} size={24} />
+            <Symbol name={element.name as IIcon} size={24} />
           </Link>
         );
       })}

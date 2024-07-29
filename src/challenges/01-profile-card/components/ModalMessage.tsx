@@ -4,6 +4,7 @@ import { Button } from '~/atoms';
 import ModalInner from '~/atoms/Modal/ModalInner';
 import { Input } from '~/atoms/Input';
 import { usePostMessage } from '~/challenges/01-profile-card/hooks/usePostMessage';
+import { useToast } from '~/atoms/Toast/context/ToastProvider';
 
 type Props = {
   close: () => void;
@@ -16,11 +17,14 @@ const ModalMessage = ({ close }: ModalProps) => {
 
   const { mutate, isPending } = usePostMessage();
 
+  const { success: toastSuccess } = useToast();
+
   const sendMessage = () => {
     mutate(
       { message },
       {
         onSuccess: () => {
+          toastSuccess('Your message has been sent');
           return close();
         },
       }

@@ -1,4 +1,3 @@
-import { useEffect } from 'react';
 import clsx from 'clsx';
 import styles from './ProfileCard.module.scss';
 import ProfileCardHero from '~/challenges/01-profile-card/containers/ProfileCardHero';

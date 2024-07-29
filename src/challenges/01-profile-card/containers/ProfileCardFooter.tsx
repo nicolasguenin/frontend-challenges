@@ -6,6 +6,7 @@ import Skeleton from '~/atoms/Skeleton';
 import { useMutateUser } from '~/challenges/01-profile-card/hooks/useMutateUser';
 import ErrorMessage from '~/components/errors/ErrorMessage';
 import ModalMessage from '~/challenges/01-profile-card/components/ModalMessage';
+import { IIcon } from '~/interfaces/Icon.interface';
 
 const ProfileCardFooter = ({ className }: ComponentPropsWithoutRef<'div'>) => {
   const { data, isLoading } = useGetUser();
@@ -39,7 +40,7 @@ const ProfileCardFooter = ({ className }: ComponentPropsWithoutRef<'div'>) => {
           lowercase
           roundedFull
           minWidth
-          icon={data.followed ? 'heart' : undefined}
+          icon={data.followed ? ('heart' as IIcon) : undefined}
           onClick={follow}
         >
           {data.followed ? 'Followed' : 'Follow'}

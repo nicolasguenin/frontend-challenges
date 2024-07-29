@@ -1,3 +1,5 @@
+import { IIcon } from '~/interfaces/Icon.interface';
+
 export default [
   {
     href: '/',
@@ -9,4 +11,4 @@ export default [
     name: '01-Profile-card',
     icon: 'card-account-details',
   },
-];
+] as { href: string; name: string; icon: IIcon }[];
