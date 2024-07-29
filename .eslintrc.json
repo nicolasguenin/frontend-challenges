@@ -160,7 +160,9 @@
         }
       ],
       "no-unused-vars":[
-        "error"
+        "error", {
+          "ignoreRestSiblings": true
+        }
       ],
       "no-console":[
         "warn",
