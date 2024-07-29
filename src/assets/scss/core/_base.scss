@@ -18,5 +18,14 @@ img {
 }
 
 a {
+  color: var(--neutral);
   transition: animations.$default-transition;
+
+  &:hover {
+    color: var(--primary);
+  }
+}
+
+p {
+  margin-top: 0;
 }
