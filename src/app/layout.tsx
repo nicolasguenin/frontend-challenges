@@ -1,13 +1,18 @@
 import '../assets/scss/variables/index.scss';
 import '../assets/scss/core/index.scss';
 import '../assets/scss/navigation/index.scss';
+import '../assets/scss/atoms/index.scss';
 import '../assets/scss/commons/index.scss';
+import '../assets/scss/containers/index.scss';
 import '../assets/scss/transitions/index.scss';
 
+import { type ReactNode } from 'react';
 import type { Metadata } from 'next';
 import { Open_Sans } from 'next/font/google';
 import Sidebar from '~/components/navigation/contents/Sidebar';
 import { SidebarProvider } from '~/components/navigation/context/SidebarProvider';
+import ReactQueryProvider from '~/components/queries/ReactQueryProvider';
+import { ToastProvider } from '~/atoms/Toast/context/ToastProvider';
 
 const fontFamily = Open_Sans({ subsets: ['latin'] });
 
@@ -19,15 +24,19 @@ export const metadata: Metadata = {
 export default function RootLayout({
   children,
 }: Readonly<{
-  children: React.ReactNode;
+  children: ReactNode;
 }>) {
   return (
     <html lang='en'>
       <body className={fontFamily.className}>
-        <SidebarProvider>
-          <Sidebar />
-        </SidebarProvider>
-        <div className='pl-5'>{children}</div>
+        <ToastProvider>
+          <SidebarProvider>
+            <Sidebar />
+          </SidebarProvider>
+          <ReactQueryProvider>
+            <div className='pl-5'>{children}</div>
+          </ReactQueryProvider>
+        </ToastProvider>
       </body>
     </html>
   );
