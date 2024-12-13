@@ -25,4 +25,7 @@ export type IIcon =
   | 'more'
   | 'shopping'
   | 'spinner'
+  | 'star'
+  | 'star-half-full'
+  | 'star-outline'
   | 'x';

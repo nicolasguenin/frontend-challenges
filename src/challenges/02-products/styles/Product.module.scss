@@ -1,0 +1,22 @@
+@use '~/assets/scss/utils/func';
+
+.productListItemThumbnail {
+  width: func.rem(250);
+  height: func.rem(300);
+}
+
+.productThumbnail {
+  width: func.rem(250);
+  height: func.rem(300);
+}
+
+.productPick {
+  width: func.rem(50);
+  height: func.rem(65);
+  border-style: solid;
+  border-width: func.rem(3);
+}
+
+.notSelected {
+  opacity: 0.6;
+}
