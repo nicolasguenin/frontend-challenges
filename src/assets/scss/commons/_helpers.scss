@@ -14,6 +14,14 @@
   }
 }
 
+.cursor {
+  @each $cursor in ('not-allowed', 'pointer') {
+    &-#{$cursor} {
+      cursor: #{$cursor};
+    }
+  }
+}
+
 .visually-hidden {
   position: absolute;
   width: 1px;
