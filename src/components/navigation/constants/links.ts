@@ -16,4 +16,9 @@ export default [
     name: '02 Add to bag',
     icon: 'shopping',
   },
+  {
+    href: '/challenges/03/mobile-navigation',
+    name: '03 Mobile navigation',
+    icon: 'cellphone',
+  },
 ] as { href: string; name: string; icon: IIcon }[];

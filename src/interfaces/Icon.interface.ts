@@ -9,6 +9,7 @@ export type IIcon =
   | 'arrow-up'
   | 'arrow-up-square'
   | 'card-account-details'
+  | 'cellphone'
   | 'check-circle'
   | 'close'
   | 'close-circle'
